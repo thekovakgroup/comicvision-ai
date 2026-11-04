@@ -1,0 +1,38 @@
+﻿# Python virtual environments
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Comic datasets
+data/raw/
+data/interim/
+data/processed/
+
+# Model artifacts
+models/
+mlruns/
+mlartifacts/
+
+# Temporary files
+*.log
+*.tmp
+*.egg-info/
