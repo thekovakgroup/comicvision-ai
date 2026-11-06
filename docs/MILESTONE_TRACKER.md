@@ -9,7 +9,7 @@
 
 | ID | Milestone | Status | Estimated Duration |
 |---|---|---|---|
-| 01 | Project Foundation | In Progress | 1 week |
+| 01 | Project Foundation | Completed | 1 week |
 | 02 | Physical Data Acquisition | Not Started | 2 weeks |
 | 03 | Data Audit and EDA | Not Started | 1 week |
 | 04 | Preprocessing and Baselines | Not Started | 1 week |
@@ -26,7 +26,7 @@ Estimated total: 14–20 weeks, subject to actual progress and data quality.
 
 ## 2. Milestone 01 — Project Foundation
 
-**Status:** In Progress
+**Status:** Completed
 
 ### Completed and Verified
 
