@@ -1,153 +1,156 @@
+
 # ComicVision AI — Session Handoff
 
-**Version:** 1.0
+**Version:** 1.1
 **Last Updated:** November 4, 2026
 **Current Milestone:** 01 — Project Foundation
-**Milestone Status:** In Progress
-**Current Step:** 21 — Populate Session Handoff
+**Milestone Status:** Closeout In Progress
+**Current Step:** 80 — Update Session Handoff
 
 ## 1. Project Identity
 
 **Project:** ComicVision AI
-**Objective:** Build a deployable comic book cataloging, classification, visual search, and recommendation system using an initial collection of 100+ physical comic books.
 
-**Development approach:** Instructor-led, learner-focused, one executable action at a time.
+**Objective:** Build a deployable AI-powered comic book cataloging, classification, recommendation, and multimodal retrieval system using an initial collection of 100 physical comic books.
 
-**Roadmap:** 12 milestones, defined in `PROJECT_MASTER.md`.
+**Pilot Dataset:** 20 unique physical comics.
 
-## 2. Local Development Environment
+**Development Approach:** Instructor-led, learner-focused, one executable action per turn.
 
-| Component | Verified Value |
+**Roadmap:** 12 milestones defined in `docs/PROJECT_MASTER.md`.
+
+## 2. Development Environment
+
+| Component | Value |
 |---|---|
-| Operating system | Windows |
+| Operating System | Windows |
 | Terminal | PowerShell |
-| Project directory | `C:\Users\vrber\ML_Projects\comicvision-ai` |
-| Python version | 3.11.9 |
-| Python executable | `C:\Users\vrber\ML_Projects\comicvision-ai\.venv\Scripts\python.exe` |
-| Virtual environment | `.venv` |
-| Virtual environment active at last check | Yes |
-| Git branch | `main` |
-| Git repository | Initialized locally |
-| GitHub remote | Not yet configured |
-
-The Python interpreter was verified using `sys.executable`, and virtual environment isolation was confirmed using `sys.prefix != sys.base_prefix`.
+| IDE | VS Code |
+| Project Directory | `C:\Users\vrber\ML_Projects\comicvision-ai` |
+| Python | 3.11.9 |
+| Virtual Environment | `.venv` |
+| Git Branch | `main` |
+| GitHub Repository | `https://github.com/thekovakgroup/comicvision-ai` |
+| Git Remote | `origin` |
 
 ## 3. Verified Completed Work
 
-- [x] Created the ComicVision AI project directory.
-- [x] Deactivated the Bank Account Fraud project's virtual environment.
-- [x] Created a dedicated Python 3.11 virtual environment.
-- [x] Activated and verified the ComicVision AI interpreter.
-- [x] Initialized the local Git repository on `main`.
-- [x] Created `.gitignore`.
-- [x] Verified that Git ignores `.venv/`.
-- [x] Created the planned project directory structure.
-- [x] Verified the directory paths.
-- [x] Created `docs/PROJECT_MASTER.md`.
-- [x] Verified four required Project Master headings.
-- [x] Created `docs/MILESTONE_TRACKER.md`.
-- [x] Verified five required Milestone Tracker sections.
-- [x] Created `docs/SESSION_HANDOFF.md`.
+- [x] Created project directory and structure.
+- [x] Created dedicated Python virtual environment.
+- [x] Verified Python 3.11.9 interpreter.
+- [x] Configured `.gitignore`.
+- [x] Created `pyproject.toml`.
+- [x] Installed development dependencies.
+- [x] Created and executed environment validation notebook.
+- [x] Created automated environment tests.
+- [x] Verified 2 passing tests.
+- [x] Created project README.
+- [x] Created Project Master roadmap.
+- [x] Created Milestone Tracker.
+- [x] Created Session Handoff.
+- [x] Created comic data acquisition specification.
+- [x] Verified all 11 acquisition specification sections.
+- [x] Confirmed pilot requires 20 unique comics, not 20 publishers.
+- [x] Created initial Git commit.
+- [x] Published initial commit to GitHub.
+- [x] Verified local and remote branch synchronization.
 
-## 4. Current Repository State
+## 4. Last Verified Git State
 
-**Last verified Git status:**
+**Initial Commit:** `36105a3`
+
+**Commit Message:**
+`chore: establish ComicVision AI project foundation`
+
+**Published Branch:** `main`
+
+**Remote Tracking:** `origin/main`
+
+**Last Verified Synchronization:**
 
 ```text
-On branch main
-
-No commits yet
-
-Untracked files:
-  .venv/
+    ## main...origin/main
 ```
 
-This status was captured before `.gitignore` was created.
+This synchronization was verified before the latest documentation changes.
 
-A subsequent short Git status confirmed:
+The acquisition specification and milestone documentation updates have not yet been committed or pushed.
 
-```text
-?? .gitignore
-```
+Do not assume the working directory is currently clean.
 
-This verified that `.venv/` was being ignored.
-
-**Important:** Git status has not been rechecked since creating the documentation files and project directories. Do not assume the current working tree is clean.
-
-No Git commit or GitHub push has been verified.
-
-## 5. Current Documentation
+## 5. Project Documentation
 
 | File | Status |
 |---|---|
-| `docs/PROJECT_MASTER.md` | Created; key headings verified |
-| `docs/MILESTONE_TRACKER.md` | Created; key headings verified |
-| `docs/SESSION_HANDOFF.md` | Created; content pending verification |
-| `README.md` | Not created |
+| `docs/PROJECT_MASTER.md` | Created and committed |
+| `docs/MILESTONE_TRACKER.md` | Updated locally; closeout pending |
+| `docs/SESSION_HANDOFF.md` | Updating locally |
+| `docs/COMIC_DATA_ACQUISITION_SPEC.md` | Created and validated locally |
+| `README.md` | Created and committed |
+| `pyproject.toml` | Created and committed |
+| `notebooks/00_environment_validation.ipynb` | Executed and committed |
+| `tests/test_environment.py` | 2 tests passed; committed |
 
-A possible encoding/display issue was observed when PowerShell displayed an em dash as `â€” in the milestone tracker. Investigate during documentation quality checks.
+## 6. Acquisition Requirements
 
-## 6. Remaining Milestone 01 Work
+- Pilot: 20 unique physical comics.
+- Full collection: 100 unique physical comics.
+- Publisher diversity encouraged, not required.
+- Stable comic identifiers beginning with `CV0001`.
+- Original cover images stored in `data/raw/covers/`.
+- Metadata includes comic ID, title, issue number, publisher, image path, verification status, and supporting fields.
+- OCR output requires human verification.
+- Missing and uncertain metadata must not be invented.
+- Data quality and class imbalance must be assessed before modeling.
 
-- [ ] Verify `SESSION_HANDOFF.md` content.
-- [ ] Review documentation encoding and consistency.
-- [ ] Create project README.
-- [ ] Establish Python project configuration and dependencies.
-- [ ] Create and execute the initial Jupyter notebook.
-- [ ] Finalize technical architecture and requirements.
-- [ ] Define the 20-comic pilot photography standard.
-- [ ] Define the comic metadata schema.
-- [ ] Create GitHub repository and configure the remote.
-- [ ] Add appropriate tracked placeholder files where necessary.
-- [ ] Run project validation.
-- [ ] Commit and push verified project files.
-- [ ] Verify clean Git status.
-- [ ] Approve Milestone 01 completion.
+The authoritative acquisition standards are documented in:
 
-## 7. Instructor-Led Workflow Rules
+`docs/COMIC_DATA_ACQUISITION_SPEC.md`
 
-1. Explain what each step accomplishes and why it matters.
-2. Provide only one executable command, code cell, or action per turn.
-3. Wait for the user's exact output before proceeding.
-4. Verify successful execution and troubleshoot errors.
-5. Do not skip milestone acceptance criteria.
-6. Use learner-oriented Jupyter notebooks with explanations, exercises, and interpretation questions.
-7. Keep the original 12-milestone roadmap intact.
-8. Do not claim that unverified tasks are complete.
+## 7. Remaining Milestone 01 Closeout
 
-## 8. Chat Continuity Protocol
+- [ ] Verify updated Session Handoff content.
+- [ ] Reconcile Milestone Tracker headings and completion status.
+- [ ] Run documentation quality checks.
+- [ ] Stage the final documentation changes.
+- [ ] Commit and push the closeout documentation.
+- [ ] Verify GitHub synchronization and clean Git status.
+- [ ] Formally mark Milestone 01 complete.
 
-Begin a new ChatGPT conversation after approximately three completed milestones.
+## 8. Next Milestone
 
-Before transitioning:
+**Milestone 02 — Physical Data Acquisition**
 
-1. Update `PROJECT_MASTER.md` if architecture or requirements changed.
-2. Update `MILESTONE_TRACKER.md`.
-3. Update `SESSION_HANDOFF.md`.
-4. Run relevant tests and verify Git status.
-5. Commit and push verified changes.
-6. Generate a concise handoff prompt.
+Initial objectives:
 
-In a new chat, consult the latest committed versions of these documents before issuing new development instructions.
+1. Select 20 unique physical comics.
+2. Capture consistent front-cover photographs.
+3. Create the initial metadata catalog.
+4. Verify metadata and image references.
+5. Produce a pilot validation report.
+6. Expand toward 100 verified records.
 
-## 9. Known Issues and Risks
+Do not begin Milestone 02 until Milestone 01 closeout is verified.
 
-**Issue 1 — Small dataset:** The initial collection contains 100+ physical comics. Some supervised ML targets may lack sufficient examples.
+## 9. Instructor-Led Workflow Rules
 
-**Issue 2 — Copyright:** Public distribution of comic cover images requires appropriate rights considerations.
+- Explain what each action does and why.
+- Provide only one executable command, code cell, or action per turn.
+- Wait for the user's exact output.
+- Verify results before advancing.
+- Troubleshoot unexpected results before continuing.
+- Include learner-oriented explanations and occasional knowledge checks.
+- Update project continuity documents at milestone boundaries.
+- Use Git branches and commits to preserve verified milestones.
 
-**Issue 3 — Encoding:** A possible PowerShell or Markdown encoding issue was observed.
+## 10. Resume Instructions
 
-**Issue 4 — Repository synchronization:** GitHub has not yet been configured.
+At the beginning of the next conversation:
 
-## 10. Exact Next Action
+1. Review `docs/PROJECT_MASTER.md`.
+2. Review `docs/MILESTONE_TRACKER.md`.
+3. Review `docs/SESSION_HANDOFF.md`.
+4. Confirm the last verified Git state.
+5. Resume from the documented next action.
 
-Verify that `docs/SESSION_HANDOFF.md` contains the required sections and current project state.
-
-Do not advance to README creation until this verification passes.
-
----
-
-**Current milestone:** 01 — Project Foundation
-**Completion approval:** Pending
-**Next milestone:** 02 — Physical Data Acquisition (not started)
+Do not assume unverified steps were completed.

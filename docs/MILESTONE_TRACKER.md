@@ -41,20 +41,20 @@ Estimated total: 14–20 weeks, subject to actual progress and data quality.
 - [x] Verify key Project Master headings.
 - [x] Create `MILESTONE_TRACKER.md`.
 
-### Remaining Tasks
+### Additional Completed Tasks
 
-- [ ] Populate and verify `MILESTONE_TRACKER.md`.
-- [ ] Create and populate `SESSION_HANDOFF.md`.
-- [ ] Create project README.
-- [ ] Create Python project configuration.
-- [ ] Establish dependency management.
-- [ ] Create and verify initial Jupyter notebook.
-- [ ] Finalize project requirements and architecture.
-- [ ] Define 20-comic photography and metadata standards.
-- [ ] Create GitHub repository and configure remote.
-- [ ] Run initial project validation.
-- [ ] Commit and push verified project foundation.
-- [ ] Confirm clean Git status.
+- [x] Populate and verify `MILESTONE_TRACKER.md`.
+- [x] Create and populate `SESSION_HANDOFF.md`.
+- [x] Create project README.
+- [x] Create Python project configuration.
+- [x] Establish dependency management.
+- [x] Create and verify initial Jupyter notebook.
+- [x] Finalize project requirements and architecture.
+- [x] Define 20-comic photography and metadata standards.
+- [x] Create GitHub repository and configure remote.
+- [x] Run initial project validation.
+- [x] Commit and push verified project foundation.
+- [x] Confirm clean Git status.
 
 ### Milestone 01 Acceptance Criteria
 
