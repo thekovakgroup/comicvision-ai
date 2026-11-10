@@ -1,9 +1,11 @@
 # ComicVision AI — Project Master
 
-**Version:** 1.0
-**Status:** Active Development
-**Current Milestone:** 01 — Project Foundation
+**Version:** 1.1
+**Last Updated:** November 10, 2026
+**Current Milestone:** 02 — Physical Data Acquisition
+**Overall Status:** In Progress
 **Project Type:** Computer Vision, Machine Learning, Deep Learning, NLP, and Multimodal AI
+
 
 ## 1. Project Vision
 
@@ -110,6 +112,56 @@ Before switching conversations:
 4. Generate a compact handoff prompt.
 5. Resume from the documented next action.
 
+## 9A. Milestone 02 — Verified Implementation Progress
+
+**Status:** In Progress
+**Checkpoint Date:** November 10, 2026
+**Development Branch:** `milestone-02-data-acquisition`
+**Latest Verified Commit:** `413a5e1`
+
+### Data Acquisition
+
+- Defined a 12-column comic metadata schema.
+- Established a 20-comic pilot target from the physical collection.
+- Created the pilot metadata catalog.
+- Recorded the first comic: `CV0001`, The New Teen Titans #25.
+- Verified the first cover image locally using Pillow.
+- Established human verification and metadata provenance requirements.
+
+### Catalog Validation
+
+Implemented `src/ingestion/validate_catalog.py` with:
+
+- CSV column structure validation.
+- Required metadata field validation.
+- Verification status validation.
+- Cover image path existence checks.
+- Duplicate comic ID detection.
+- Empty catalog rejection.
+
+### Automated Testing
+
+- Test file: `tests/test_validate_catalog.py`
+- Unit tests: 10 passing.
+- Integration tests: 7 passing.
+- Total: 17 passing.
+- Latest verified regression result: 17 passed, 0 failed.
+
+### Version Control
+
+- Validator and automated tests committed as `413a5e1`.
+- Development branch pushed to GitHub.
+- Local branch and recorded upstream verified synchronized.
+- Changes have not been merged into `main`.
+
+### Remaining Milestone 02 Work
+
+- Expand the pilot catalog toward 20 verified comics.
+- Strengthen metadata format and image-quality validation.
+- Complete the acquisition quality review.
+- Update the milestone tracker and session handoff.
+- Confirm Milestone 02 acceptance criteria before closure.
+
 ## 10. Deferred Features
 
 - Comic market-price prediction.
@@ -132,6 +184,7 @@ ComicVision AI is complete when:
 
 ---
 
+
 **Document owner:** ComicVision AI Project
-**Last reviewed:** November 4, 2026
-**Next review:** Milestone 01 completion
+**Last reviewed:** November 10, 2026
+**Next review:** Milestone 02 completion

@@ -1,8 +1,8 @@
 # ComicVision AI — Milestone Tracker
 
-**Version:** 1.0
-**Last Updated:** November 4, 2026
-**Current Milestone:** 01 — Project Foundation
+**Version:** 1.1
+**Last Updated:** November 10, 2026
+**Current Milestone:** 02 — Physical Data Acquisition
 **Overall Status:** In Progress
 
 ## 1. Master Milestone Dashboard
@@ -10,7 +10,7 @@
 | ID | Milestone | Status | Estimated Duration |
 |---|---|---|---|
 | 01 | Project Foundation | Completed | 1 week |
-| 02 | Physical Data Acquisition | Not Started | 2 weeks |
+| 02 | Physical Data Acquisition | In Progress | 2 weeks |
 | 03 | Data Audit and EDA | Not Started | 1 week |
 | 04 | Preprocessing and Baselines | Not Started | 1 week |
 | 05 | Unsupervised Clustering | Not Started | 1 week |
@@ -70,16 +70,56 @@ Milestone 01 is complete only when:
 
 ## 3. Milestone 02 — Physical Data Acquisition
 
-**Status:** Not Started
+**Status:** In Progress
 
-Deliverables:
-- 20-comic pilot photography and metadata validation.
-- Complete 100-comic catalog.
-- Image naming and storage standards.
-- OCR-assisted metadata extraction experiment.
-- Dataset validation report.
+### Original Deliverables
 
-Acceptance criteria: 100 unique, verified comic records with valid cover image references and documented data quality.
+- [ ] 20-comic pilot photography and metadata validation.
+- [ ] Complete 100-comic catalog.
+- [x] Image naming and storage standards documented.
+- [ ] OCR-assisted metadata extraction experiment.
+- [ ] Dataset validation report.
+
+### Completed and Verified Implementation
+
+- [x] Define the 12-column metadata schema.
+- [x] Establish the 20-comic pilot acquisition plan.
+- [x] Create `data/raw/metadata/comic_catalog_pilot.csv`.
+- [x] Record the first comic, `CV0001`.
+- [x] Verify the first cover image using Pillow.
+- [x] Implement `src/ingestion/validate_catalog.py`.
+- [x] Validate CSV column structure.
+- [x] Validate required metadata fields.
+- [x] Validate verification status values.
+- [x] Check cover image file existence.
+- [x] Detect duplicate comic IDs.
+- [x] Reject empty catalogs.
+- [x] Implement 10 unit tests and 7 integration tests.
+- [x] Verify all 17 automated tests pass.
+- [x] Commit and push the validator and tests (`413a5e1`).
+
+### Remaining Work
+
+- [ ] Expand the pilot catalog to 20 verified comics.
+- [ ] Complete acquisition and verification of 100 unique comics.
+- [ ] Strengthen metadata format validation.
+- [ ] Implement image readability and quality checks.
+- [ ] Perform the OCR-assisted metadata extraction experiment.
+- [ ] Produce the dataset validation report.
+- [ ] Review all Milestone 02 acceptance criteria.
+
+### Milestone 02 Acceptance Criteria
+
+100 unique, verified comic records with valid cover image
+references and documented data quality.
+
+**Acceptance Status:** Not Yet Satisfied
+
+**Latest Verified Test Result:** 17 passed, 0 failed.
+
+**Development Branch:** `milestone-02-data-acquisition`
+
+**Latest Verified Commit:** `413a5e1`
 
 ## 4. Milestone 03 — Data Audit and EDA
 
@@ -222,12 +262,15 @@ Before starting a new chat, update:
 
 Record the last verified action, current branch, Git status, unresolved issues, and next executable action.
 
+
 ## 15. Current Next Action
 
-Verify that `MILESTONE_TRACKER.md` has been populated correctly.
+Complete the Milestone 02 documentation checkpoint, then
+continue strengthening catalog metadata validation and
+expanding the verified comic dataset.
 
 ---
 
 **Project:** ComicVision AI
-**Current milestone:** 01
+**Current milestone:** 02 — Physical Data Acquisition
 **Milestone completion:** Not yet approved
