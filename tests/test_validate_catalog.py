@@ -336,3 +336,56 @@ def test_empty_catalog_integration(tmp_path):
     assert result["valid"] is False
     assert result["record_count"] == 0
     assert "Comic catalog contains no records." in result["errors"]
+
+def test_valid_comic_id_format():
+    """Comic IDs must use CV followed by four digits."""
+    from src.ingestion.validate_catalog import validate_comic_id
+
+    assert validate_comic_id("CV0001") is True
+    assert validate_comic_id("CV0123") is True
+    assert validate_comic_id("CV9999") is True
+
+def test_invalid_comic_id_format():
+    """Reject comic IDs that do not follow the required format."""
+    from src.ingestion.validate_catalog import validate_comic_id
+
+    assert validate_comic_id("CV1") is False
+    assert validate_comic_id("CV12345") is False
+    assert validate_comic_id("cv0001") is False
+    assert validate_comic_id("COMIC0001") is False
+    assert validate_comic_id("CVABCD") is False
+    assert validate_comic_id("") is False
+
+def test_invalid_comic_id_catalog_integration(tmp_path):
+    """Reject a catalog containing an invalid comic ID."""
+    import csv
+
+    from src.ingestion.validate_catalog import (
+        EXPECTED_COLUMNS,
+        validate_catalog,
+    )
+
+    source_path = (
+        Path(__file__).resolve().parents[1]
+        / "data/raw/metadata/comic_catalog_pilot.csv"
+    )
+
+    with source_path.open(encoding="utf-8-sig", newline="") as file:
+        record = next(csv.DictReader(file))
+
+    record["comic_id"] = "INVALID123"
+
+    test_csv = tmp_path / "invalid_comic_id.csv"
+
+    with test_csv.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=EXPECTED_COLUMNS)
+        writer.writeheader()
+        writer.writerow(record)
+
+    result = validate_catalog(test_csv)
+
+    assert result["valid"] is False
+    assert any(
+        "Invalid comic ID" in error
+        for error in result["errors"]
+    )

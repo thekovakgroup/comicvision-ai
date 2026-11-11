@@ -1,4 +1,3 @@
-
 import csv
 from pathlib import Path
 
@@ -100,6 +99,12 @@ def validate_catalog(csv_path):
 
     for record in records:
         comic_id = record.get("comic_id", "").strip()
+
+        if comic_id and not validate_comic_id(comic_id):
+            errors.append(
+                f"{comic_id}: Invalid comic ID format."
+            )
+
         missing_fields = validate_required_fields(record)
 
         if missing_fields:
@@ -133,3 +138,9 @@ def validate_catalog(csv_path):
         "record_count": len(records),
         "errors": errors,
     }
+
+def validate_comic_id(comic_id):
+    """Check whether a comic ID uses CV followed by four digits."""
+    import re
+
+    return re.fullmatch(r"CV[0-9]{4}", comic_id) is not None
