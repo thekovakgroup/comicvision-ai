@@ -105,6 +105,14 @@ def validate_catalog(csv_path):
                 f"{comic_id}: Invalid comic ID format."
             )
 
+        publication_year = record.get("publication_year", "")
+
+        if not validate_publication_year(publication_year):
+            errors.append(
+                f"{comic_id or 'UNKNOWN'}: "
+                f"Invalid publication year: {publication_year!r}"
+            )
+
         missing_fields = validate_required_fields(record)
 
         if missing_fields:
@@ -144,3 +152,20 @@ def validate_comic_id(comic_id):
     import re
 
     return re.fullmatch(r"CV[0-9]{4}", comic_id) is not None
+
+def validate_publication_year(year):
+    """Validate an optional publication year from 1800 to today."""
+    from datetime import date
+
+    if year == "":
+        return True
+
+    if not isinstance(year, str):
+        return False
+
+    if len(year) != 4 or not year.isascii() or not year.isdecimal():
+        return False
+
+    year_number = int(year)
+
+    return 1800 <= year_number <= date.today().year

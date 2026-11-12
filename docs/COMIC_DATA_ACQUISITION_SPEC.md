@@ -71,6 +71,16 @@ Create one catalog record per physical comic.
 | verification_status | Yes | verified, pending, or uncertain |
 | notes | No | Exceptions or additional context |
 
+**Publication year validation policy**
+
+- The `publication_year` field is optional. An empty value is accepted.
+- When populated, the year must contain exactly four ASCII decimal digits (`0`–`9`).
+- The minimum accepted year is **1800**.
+- The maximum accepted year is the **current calendar year**, determined dynamically.
+- Years before 1800, future years, malformed values, and non-string values are rejected.
+- The 1800 minimum is a project data-quality boundary, not a claim about when comics or sequential art originated.
+- Publication years must be supported by an appropriate metadata source before being marked as verified.
+
 Unknown required metadata must be flagged for review rather
 than invented.
 

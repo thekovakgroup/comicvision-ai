@@ -389,3 +389,70 @@ def test_invalid_comic_id_catalog_integration(tmp_path):
         "Invalid comic ID" in error
         for error in result["errors"]
     )
+
+def test_valid_publication_year():
+    """Accept publication years from 1800 through the current year."""
+    from datetime import date
+
+    from src.ingestion.validate_catalog import validate_publication_year
+
+    assert validate_publication_year("") is True
+    assert validate_publication_year("1800") is True
+    assert validate_publication_year("1895") is True
+    assert validate_publication_year("1938") is True
+    assert validate_publication_year("1982") is True
+    assert validate_publication_year(str(date.today().year)) is True
+
+def test_invalid_publication_year():
+    """Reject invalid, implausible, and future publication years."""
+    from datetime import date
+
+    from src.ingestion.validate_catalog import validate_publication_year
+
+    assert validate_publication_year("0001") is False
+    assert validate_publication_year("1799") is False
+    assert validate_publication_year("0000") is False
+
+    assert validate_publication_year("19AB") is False
+    assert validate_publication_year("19822") is False
+    assert validate_publication_year("82") is False
+
+    future_year = str(date.today().year + 1)
+    assert validate_publication_year(future_year) is False
+
+    assert validate_publication_year(None) is False
+    assert validate_publication_year(1982) is False
+
+def test_invalid_publication_year_catalog_integration(tmp_path):
+    """Reject a catalog containing an invalid publication year."""
+    import csv
+
+    from src.ingestion.validate_catalog import (
+        EXPECTED_COLUMNS,
+        validate_catalog,
+    )
+
+    source_path = (
+        Path(__file__).resolve().parents[1]
+        / "data/raw/metadata/comic_catalog_pilot.csv"
+    )
+
+    with source_path.open(encoding="utf-8-sig", newline="") as file:
+        record = next(csv.DictReader(file))
+
+    record["publication_year"] = "1799"
+
+    test_csv = tmp_path / "invalid_publication_year.csv"
+
+    with test_csv.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=EXPECTED_COLUMNS)
+        writer.writeheader()
+        writer.writerow(record)
+
+    result = validate_catalog(test_csv)
+
+    assert result["valid"] is False
+    assert any(
+        "Invalid publication year" in error
+        for error in result["errors"]
+    )
