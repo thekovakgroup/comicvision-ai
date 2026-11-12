@@ -106,11 +106,30 @@ def validate_catalog(csv_path):
             )
 
         publication_year = record.get("publication_year", "")
+        publication_date = record.get("publication_date", "")
 
         if not validate_publication_year(publication_year):
             errors.append(
                 f"{comic_id or 'UNKNOWN'}: "
                 f"Invalid publication year: {publication_year!r}"
+            )
+
+        if not validate_publication_date(publication_date):
+            errors.append(
+                f"{comic_id or 'UNKNOWN'}: "
+                f"Invalid publication date: {publication_date!r}"
+            )
+
+        if (
+            publication_date
+            and publication_year
+            and validate_publication_date(publication_date)
+            and validate_publication_year(publication_year)
+            and publication_date[:4] != publication_year
+        ):
+            errors.append(
+                f"{comic_id or 'UNKNOWN'}: "
+                "Publication date/year mismatch."
             )
 
         missing_fields = validate_required_fields(record)
@@ -169,3 +188,40 @@ def validate_publication_year(year):
     year_number = int(year)
 
     return 1800 <= year_number <= date.today().year
+
+def validate_publication_date(date_value):
+    """Validate an optional publication date from 1800 through today."""
+    from datetime import date
+
+    if date_value == "":
+        return True
+
+    if not isinstance(date_value, str):
+        return False
+
+    if len(date_value) != 10:
+        return False
+
+    if date_value[4] != "-" or date_value[7] != "-":
+        return False
+
+    year = date_value[:4]
+    month = date_value[5:7]
+    day = date_value[8:10]
+
+    if not all(
+        part.isascii() and part.isdecimal()
+        for part in (year, month, day)
+    ):
+        return False
+
+    try:
+        parsed_date = date(
+            int(year),
+            int(month),
+            int(day),
+        )
+    except ValueError:
+        return False
+
+    return date(1800, 1, 1) <= parsed_date <= date.today()

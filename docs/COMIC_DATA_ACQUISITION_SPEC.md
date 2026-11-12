@@ -81,6 +81,22 @@ Create one catalog record per physical comic.
 - The 1800 minimum is a project data-quality boundary, not a claim about when comics or sequential art originated.
 - Publication years must be supported by an appropriate metadata source before being marked as verified.
 
+**Publication date validation policy**
+
+- The `publication_date` field is optional. An empty value is accepted.
+- When populated, the date must use the exact `YYYY-MM-DD` format.
+- The year, month, and day must contain ASCII decimal digits (`0`–`9`).
+- Dates must represent valid Gregorian calendar dates, including correct leap-year handling.
+- The earliest accepted date is **1800-01-01**.
+- The latest accepted date is the **current date**, determined dynamically.
+- Future dates, impossible calendar dates, malformed values, and non-string values are rejected.
+- When both `publication_date` and `publication_year` are populated, the year components must match.
+- A populated publication date is permitted when `publication_year` is empty.
+- A populated publication year is permitted when `publication_date` is empty.
+- Do not invent a month or day when only the publication month or year is known.
+- Publication dates must be supported by an appropriate metadata source before being marked as verified.
+- The 1800 minimum is a project data-quality boundary, not a historical claim about the origin of comics.
+
 Unknown required metadata must be flagged for review rather
 than invented.
 

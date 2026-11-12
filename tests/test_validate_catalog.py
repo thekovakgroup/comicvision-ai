@@ -456,3 +456,158 @@ def test_invalid_publication_year_catalog_integration(tmp_path):
         "Invalid publication year" in error
         for error in result["errors"]
     )
+
+def test_valid_publication_date():
+    """Accept empty dates and valid calendar dates."""
+    from src.ingestion.validate_catalog import validate_publication_date
+
+    assert validate_publication_date("") is True
+    assert validate_publication_date("1800-01-01") is True
+    assert validate_publication_date("1895-05-05") is True
+    assert validate_publication_date("1982-11-01") is True
+    assert validate_publication_date("2000-02-29") is True
+
+def test_invalid_publication_date():
+    """Reject malformed, impossible, and out-of-range dates."""
+    from datetime import date
+
+    from src.ingestion.validate_catalog import validate_publication_date
+
+    # Dates outside the approved range
+    assert validate_publication_date("1799-12-31") is False
+    assert validate_publication_date("0000-01-01") is False
+
+    future_date = date.fromordinal(date.today().toordinal() + 1)
+    assert validate_publication_date(future_date.isoformat()) is False
+
+    # Invalid calendar dates
+    assert validate_publication_date("1982-13-01") is False
+    assert validate_publication_date("1982-02-30") is False
+    assert validate_publication_date("1900-02-29") is False
+
+    # Incorrect formats
+    assert validate_publication_date("11/01/1982") is False
+    assert validate_publication_date("1982-1-01") is False
+    assert validate_publication_date("19821101") is False
+    assert validate_publication_date("1982-AB-01") is False
+
+    # Incorrect data types
+    assert validate_publication_date(None) is False
+    assert validate_publication_date(1982) is False
+
+def test_invalid_publication_date_catalog_integration(tmp_path):
+    """Reject a catalog containing an invalid publication date."""
+    import csv
+
+    from src.ingestion.validate_catalog import (
+        EXPECTED_COLUMNS,
+        validate_catalog,
+    )
+
+    source_path = (
+        Path(__file__).resolve().parents[1]
+        / "data/raw/metadata/comic_catalog_pilot.csv"
+    )
+
+    with source_path.open(encoding="utf-8-sig", newline="") as file:
+        record = next(csv.DictReader(file))
+
+    record["publication_date"] = "1982-02-30"
+
+    test_csv = tmp_path / "invalid_publication_date.csv"
+
+    with test_csv.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=EXPECTED_COLUMNS)
+        writer.writeheader()
+        writer.writerow(record)
+
+    result = validate_catalog(test_csv)
+
+    assert result["valid"] is False
+    assert any(
+        "Invalid publication date" in error
+        for error in result["errors"]
+    )
+
+def test_publication_date_year_mismatch(tmp_path):
+    """Reject a catalog when publication date and year disagree."""
+    import csv
+
+    from src.ingestion.validate_catalog import (
+        EXPECTED_COLUMNS,
+        validate_catalog,
+    )
+
+    source_path = (
+        Path(__file__).resolve().parents[1]
+        / "data/raw/metadata/comic_catalog_pilot.csv"
+    )
+
+    with source_path.open(encoding="utf-8-sig", newline="") as file:
+        record = next(csv.DictReader(file))
+
+    # Both values are individually valid, but they disagree.
+    record["publication_date"] = "1982-11-01"
+    record["publication_year"] = "1983"
+
+    test_csv = tmp_path / "publication_date_year_mismatch.csv"
+
+    with test_csv.open("w", encoding="utf-8", newline="") as file:
+        writer = csv.DictWriter(file, fieldnames=EXPECTED_COLUMNS)
+        writer.writeheader()
+        writer.writerow(record)
+
+    result = validate_catalog(test_csv)
+
+    assert result["valid"] is False
+    assert any(
+        "Publication date/year mismatch" in error
+        for error in result["errors"]
+    )
+
+def test_valid_publication_date_year_combinations(tmp_path):
+    """Accept matching dates and optional publication fields."""
+    import csv
+
+    from src.ingestion.validate_catalog import (
+        EXPECTED_COLUMNS,
+        validate_catalog,
+    )
+
+    source_path = (
+        Path(__file__).resolve().parents[1]
+        / "data/raw/metadata/comic_catalog_pilot.csv"
+    )
+
+    with source_path.open(encoding="utf-8-sig", newline="") as file:
+        original_record = next(csv.DictReader(file))
+
+    valid_combinations = [
+        ("1982-11-01", "1982"),
+        ("1982-11-01", ""),
+        ("", "1982"),
+        ("", ""),
+    ]
+
+    for index, (publication_date, publication_year) in enumerate(
+        valid_combinations
+    ):
+        record = original_record.copy()
+        record["publication_date"] = publication_date
+        record["publication_year"] = publication_year
+
+        test_csv = tmp_path / f"valid_publication_{index}.csv"
+
+        with test_csv.open("w", encoding="utf-8", newline="") as file:
+            writer = csv.DictWriter(file, fieldnames=EXPECTED_COLUMNS)
+            writer.writeheader()
+            writer.writerow(record)
+
+        result = validate_catalog(test_csv)
+
+        assert result["valid"] is True, (
+            f"Rejected valid combination: "
+            f"date={publication_date!r}, "
+            f"year={publication_year!r}, "
+            f"errors={result['errors']}"
+        )
