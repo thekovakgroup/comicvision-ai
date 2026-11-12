@@ -23,7 +23,10 @@ __pycache__/
 Thumbs.db
 
 # Comic datasets
-data/raw/
+data/raw/*
+!data/raw/metadata/
+data/raw/metadata/*
+!data/raw/metadata/comic_catalog_pilot.csv
 data/interim/
 data/processed/
 

@@ -1,0 +1,3 @@
+﻿comic_id,title,issue_number,publisher,publication_date,publication_year,genre_tags,description,cover_image_path,metadata_source,verification_status,notes
+"CV0001","The New Teen Titans","25","DC Comics","","1982","","","data/raw/covers/CV0001_front.jpg","Physical front cover and interior indicia","pending","November 1982 cover date; 60-cent cover price; indicia states Vol. 3"
+CV0002,Spider-Woman,32,Marvel Comics Group,,1980,,,data/raw/covers/CV0002_front.jpg,Physical front cover and interior indicia,pending,November 1980 issue date; Vol. 1; 50-cent cover price; story title: The Fangs of Werewolf by Night!
