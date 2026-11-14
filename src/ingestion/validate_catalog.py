@@ -6,7 +6,7 @@ EXPECTED_COLUMNS = [
     "title",
     "issue_number",
     "publisher",
-    "publication_date",
+    "issue_date",
     "publication_year",
     "genre_tags",
     "description",
@@ -106,7 +106,7 @@ def validate_catalog(csv_path):
             )
 
         publication_year = record.get("publication_year", "")
-        publication_date = record.get("publication_date", "")
+        issue_date = record.get("issue_date", "")
 
         if not validate_publication_year(publication_year):
             errors.append(
@@ -114,22 +114,22 @@ def validate_catalog(csv_path):
                 f"Invalid publication year: {publication_year!r}"
             )
 
-        if not validate_publication_date(publication_date):
+        if not validate_issue_date(issue_date):
             errors.append(
                 f"{comic_id or 'UNKNOWN'}: "
-                f"Invalid publication date: {publication_date!r}"
+                f"Invalid issue date: {issue_date!r}"
             )
 
         if (
-            publication_date
+            issue_date
             and publication_year
-            and validate_publication_date(publication_date)
+            and validate_issue_date(issue_date)
             and validate_publication_year(publication_year)
-            and publication_date[:4] != publication_year
+            and issue_date[:4] != publication_year
         ):
             errors.append(
                 f"{comic_id or 'UNKNOWN'}: "
-                "Publication date/year mismatch."
+                "Issue date/year mismatch."
             )
 
         missing_fields = validate_required_fields(record)
@@ -189,39 +189,32 @@ def validate_publication_year(year):
 
     return 1800 <= year_number <= date.today().year
 
-def validate_publication_date(date_value):
-    """Validate an optional publication date from 1800 through today."""
+def validate_issue_date(issue_date):
+    """Validate an optional comic issue date in YYYY-MM format."""
     from datetime import date
 
-    if date_value == "":
+    if issue_date == "":
         return True
 
-    if not isinstance(date_value, str):
+    if not isinstance(issue_date, str):
         return False
 
-    if len(date_value) != 10:
+    if len(issue_date) != 7 or issue_date[4] != "-":
         return False
 
-    if date_value[4] != "-" or date_value[7] != "-":
-        return False
-
-    year = date_value[:4]
-    month = date_value[5:7]
-    day = date_value[8:10]
+    year = issue_date[:4]
+    month = issue_date[5:7]
 
     if not all(
         part.isascii() and part.isdecimal()
-        for part in (year, month, day)
+        for part in (year, month)
     ):
         return False
 
-    try:
-        parsed_date = date(
-            int(year),
-            int(month),
-            int(day),
-        )
-    except ValueError:
-        return False
+    year_number = int(year)
+    month_number = int(month)
 
-    return date(1800, 1, 1) <= parsed_date <= date.today()
+    return (
+        1800 <= year_number <= date.today().year
+        and 1 <= month_number <= 12
+    )

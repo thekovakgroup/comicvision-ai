@@ -34,7 +34,7 @@ Build an AI-powered comic book cataloging, classification, visual search, and re
 - Initial collection: 100 physical comic books.
 - Pilot dataset: 20 comics.
 - Capture: Original cover photographs.
-- Metadata: Unique ID, title, issue number, publisher, publication date, genre tags, and available descriptions.
+- Metadata: Unique ID, title, issue number, publisher, issue date (YYYY-MM), publication year (YYYY), genre tags, and available descriptions.
 - Quality controls: Duplicate checks, missing-value audits, image validation, and human verification.
 - Dataset expansion: Allowed when evaluation shows insufficient coverage.
 - Data leakage: Related images and duplicate editions must not cross evaluation boundaries.

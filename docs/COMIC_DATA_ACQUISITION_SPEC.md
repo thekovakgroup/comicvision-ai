@@ -62,7 +62,7 @@ Create one catalog record per physical comic.
 | title | Yes | Comic title |
 | issue_number | Yes | Issue identifier, stored as text |
 | publisher | Yes | Publisher name |
-| publication_date | No | Verified date in YYYY-MM-DD format |
+| issue_date | No | Source-supported comic issue or cover date in YYYY-MM format; blank when unknown |
 | publication_year | No | Verified publication year |
 | genre_tags | No | One or more supported genre labels |
 | description | No | Verified synopsis or description |
@@ -81,21 +81,19 @@ Create one catalog record per physical comic.
 - The 1800 minimum is a project data-quality boundary, not a claim about when comics or sequential art originated.
 - Publication years must be supported by an appropriate metadata source before being marked as verified.
 
-**Publication date validation policy**
+**Issue date validation policy**
 
-- The `publication_date` field is optional. An empty value is accepted.
-- When populated, the date must use the exact `YYYY-MM-DD` format.
-- The year, month, and day must contain ASCII decimal digits (`0`–`9`).
-- Dates must represent valid Gregorian calendar dates, including correct leap-year handling.
-- The earliest accepted date is **1800-01-01**.
-- The latest accepted date is the **current date**, determined dynamically.
-- Future dates, impossible calendar dates, malformed values, and non-string values are rejected.
-- When both `publication_date` and `publication_year` are populated, the year components must match.
-- A populated publication date is permitted when `publication_year` is empty.
-- A populated publication year is permitted when `publication_date` is empty.
-- Do not invent a month or day when only the publication month or year is known.
-- Publication dates must be supported by an appropriate metadata source before being marked as verified.
-- The 1800 minimum is a project data-quality boundary, not a historical claim about the origin of comics.
+- The `issue_date` field is optional. An empty value is accepted.
+- When populated, the issue date must use the exact `YYYY-MM` format, with ASCII decimal digits (`0`–`9`) for both year and month.
+- The year must be between 1800 and the current calendar year.
+- The month must be a two-digit number from `01` through `12`.
+- Full calendar dates such as `1984-03-01` are not accepted.
+- Do not invent a day when the source provides only a month and year.
+- When both `issue_date` and `publication_year` are populated, their year components must match.
+- A populated `issue_date` is permitted when `publication_year` is empty.
+- A populated `publication_year` is permitted when `issue_date` is empty.
+- Issue dates must be supported by an appropriate metadata source before being marked as verified.
+- An issue or cover date must not automatically be interpreted as the actual retail release date.
 
 Unknown required metadata must be flagged for review rather
 than invented.
