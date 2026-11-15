@@ -99,8 +99,8 @@ Milestone 01 is complete only when:
 - [x] Commit and push the validator and tests (`413a5e1`).
 
 ### Remaining Work
-
-- [ ] Expand the pilot catalog to 20 verified comics.
+- [x] Acquire 20 pilot comics with corresponding cover photographs and catalog records.
+- [ ] Independently verify historical metadata for all 20 pilot comics.
 - [ ] Complete acquisition and verification of 100 unique comics.
 - [ ] Strengthen metadata format validation.
 - [ ] Implement image readability and quality checks.
@@ -110,12 +110,24 @@ Milestone 01 is complete only when:
 
 ### Milestone 02 Acceptance Criteria
 
-100 unique, verified comic records with valid cover image
-references and documented data quality.
+Approved scope revision (November 15, 2026):
+Milestone 02 establishes a validated 20-comic pilot dataset
+with 20 readable cover photographs, consistent metadata,
+documented provenance, passing catalog validation tests,
+an acquisition quality review, an OCR-assisted extraction
+experiment, and a dataset validation report.
+
+The original 100+ comic collection target remains a
+full-project completion requirement. Additional comics
+will be acquired in batches of 10, with an intermediate
+target of 50 comics.
+
+Milestone 03 may begin after Milestone 02 pilot acceptance
+criteria are satisfied. The 12-milestone roadmap is unchanged.
 
 **Acceptance Status:** Not Yet Satisfied
 
-**Latest Verified Test Result:** 17 passed, 0 failed.
+**Latest Verified Test Result:** 29 passed, 0 failed (November 15, 2026; issue-date schema migration).
 
 **Development Branch:** `milestone-02-data-acquisition`
 

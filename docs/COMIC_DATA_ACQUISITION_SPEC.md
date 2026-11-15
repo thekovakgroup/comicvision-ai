@@ -133,7 +133,7 @@ The 20-comic pilot is accepted when:
 
 ## 9. Full Collection Acceptance Criteria
 
-Milestone 02 is complete when:
+The full-project 100+ comic acquisition target is satisfied when:
 
 - 100+ unique physical comic records are cataloged.
 - Every record has a valid cover image reference.
