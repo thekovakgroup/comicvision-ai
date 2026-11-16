@@ -2,7 +2,7 @@
 
 **Version:** 1.1
 **Last Updated:** November 10, 2026
-**Current Milestone:** 02 — Physical Data Acquisition
+**Current Milestone:** 03 - Data Audit and EDA
 **Overall Status:** In Progress
 
 ## 1. Master Milestone Dashboard
@@ -10,8 +10,8 @@
 | ID | Milestone | Status | Estimated Duration |
 |---|---|---|---|
 | 01 | Project Foundation | Completed | 1 week |
-| 02 | Physical Data Acquisition | In Progress | 2 weeks |
-| 03 | Data Audit and EDA | Not Started | 1 week |
+| 02 | Physical Data Acquisition | Completed | 2 weeks |
+| 03 | Data Audit and EDA | In Progress | 1 week |
 | 04 | Preprocessing and Baselines | Not Started | 1 week |
 | 05 | Unsupervised Clustering | Not Started | 1 week |
 | 06 | Recommendation Engine | Not Started | 1 week |
@@ -70,7 +70,8 @@ Milestone 01 is complete only when:
 
 ## 3. Milestone 02 — Physical Data Acquisition
 
-**Status:** Complete ? 20-comic pilot scope
+**Status:** Complete - 20-comic pilot scope
+
 
 ### Original Deliverables
 
@@ -134,7 +135,7 @@ criteria are satisfied. The 12-milestone roadmap is unchanged.
 **Latest Verified Commit:** `098dcbb`
 
 
-### Final Pilot Acceptance ? November 16, 2026
+### Final Pilot Acceptance - November 16, 2026
 
 - Pilot records: 20/20 verified for core metadata.
 - Original cover images: 20/20 readable.
@@ -147,16 +148,41 @@ criteria are satisfied. The 12-milestone roadmap is unchanged.
 
 ## 4. Milestone 03 — Data Audit and EDA
 
-**Status:** Not Started
+**Status:** In Progress — final documentation and Git checkpoint
 
-Deliverables:
-- Data audit notebook.
-- Missing-value and duplicate analysis.
-- Publisher, era, and genre distributions.
-- Image quality assessment.
-- Dataset suitability report.
+### Completed and Verified
 
-Acceptance criteria: Reproducible EDA and documented recommendations for downstream ML tasks.
+- [x] Create reproducible EDA notebook.
+- [x] Audit missing values and duplicate records.
+- [x] Analyze publisher and publication-decade distributions.
+- [x] Document unavailable genre labels.
+- [x] Assess all 20 cover images.
+- [x] Export and validate image-quality audit CSV.
+- [x] Create dataset suitability report.
+- [x] Declare and install project dependencies.
+- [x] Verify notebook execution from a fresh kernel.
+- [x] Pass 30 automated regression tests.
+
+### Remaining Acceptance Tasks
+
+- [ ] Review final project documentation.
+- [ ] Verify Git changes and commit Milestone 03.
+- [ ] Push changes and confirm clean Git status.
+
+### Supporting Artifacts
+
+- `notebooks/01_data_audit_eda.ipynb`
+- `reports/milestone_03_image_quality_audit.csv`
+- `reports/milestone_03_dataset_suitability_report.md`
+- `tests/test_image_quality_audit.py`
+
+### Acceptance Criteria
+
+Reproducible EDA and documented recommendations
+for downstream ML tasks.
+
+**Acceptance Status:** Pending final documentation
+and Git verification.
 
 ## 5. Milestone 04 — Preprocessing and Baselines
 
@@ -299,7 +325,7 @@ expanding the verified comic dataset.
 **Current milestone:** 02 — Physical Data Acquisition
 **Milestone completion:** Not yet approved
 
-## M735 ? Milestone 02 Metadata Verification Checkpoint
+## Milestone 02 Metadata Verification Checkpoint
 
 - Milestone 02 status: IN PROGRESS.
 - Pilot catalog: 20 records.
@@ -313,9 +339,9 @@ expanding the verified comic dataset.
 - Regression tests: 29 passed (M732).
 - Next: commit checkpoint, then reconcile seven pending records.
 
-## M749 ? Milestone 02 Completion
+##  Milestone 02 Completion
 
-- Milestone 02: COMPLETE ? pilot core metadata verification.
+- Milestone 02: COMPLETE - pilot core metadata verification.
 - Pilot records: 20.
 - Verified records: 20/20 (100%).
 - Missing required metadata fields: 0.

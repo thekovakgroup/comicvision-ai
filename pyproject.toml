@@ -9,7 +9,13 @@ version = "0.1.0"
 description = "AI-powered comic book cataloging, recommendation, and multimodal search"
 readme = "README.md"
 requires-python = ">=3.11,<3.13"
-dependencies = []
+dependencies = [
+    "numpy>=2.0,<3.0",
+    "pandas>=3.0,<4.0",
+    "matplotlib>=3.8,<4.0",
+    "Pillow>=10,<13",
+]
+
 
 [project.optional-dependencies]
 dev = [
