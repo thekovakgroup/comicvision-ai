@@ -300,3 +300,16 @@ expanding the verified comic dataset.
 - Independent CSV validation: PASS (M731).
 - Regression tests: 29 passed (M732).
 - Next: commit checkpoint, then reconcile seven pending records.
+
+## M749 ? Milestone 02 Completion
+
+- Milestone 02: COMPLETE ? pilot core metadata verification.
+- Pilot records: 20.
+- Verified records: 20/20 (100%).
+- Missing required metadata fields: 0.
+- Final independent CSV validation: PASS (M747).
+- Final regression tests: 29 passed in 0.51s (M748).
+- CV0008: publication month unresolved; year 1980 retained.
+- CV0014: qualified historical month; year 1987 retained.
+- Physical-edition authentication remains outside approval scope.
+- Next: final GitHub checkpoint and Milestone 03.

@@ -311,3 +311,18 @@ Do not assume unverified steps were completed.
 - Cover evidence: reports/figures/batch_02_cover_evidence.jpg.
 - Next: stage reviewed project files, commit, push, then finish M02.
 - Do not repeat completed consistency checks without a specific reason.
+
+## M749 ? Milestone 02 Final Handoff
+
+- Project: ComicVision AI.
+- Milestone 02 core metadata verification: COMPLETE.
+- Pilot catalog: 20 verified records, 0 pending.
+- CV0008 and CV0014 intentionally retain blank issue_date.
+- Exact physical editions have not been authenticated.
+- Final validation: PASS.
+- Regression tests: 29 passed.
+- Latest completed step: M748.
+- Next: M750 efficiency audit and final Git checkpoint.
+- Then begin Milestone 03 using the original 12-milestone roadmap.
+- Workflow: ONE executable action per turn; verify output.
+- Avoid repeating completed metadata research.

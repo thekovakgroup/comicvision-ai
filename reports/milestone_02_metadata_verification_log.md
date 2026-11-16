@@ -492,3 +492,29 @@ Qualifications:
 - Variant and edition identity remain unverified where applicable.
 
 CSV verification statuses have not yet been changed.
+
+## M744 ? Five Additional Core Metadata Approvals
+
+Approved: CV0013, CV0016, CV0017, CV0018, CV0020.
+
+Basis: historical issue references, publisher evidence, cover observations, and catalog reconciliation.
+
+Scope: core bibliographic metadata only. Exact physical editions remain unconfirmed.
+
+Gold Key/Whitman distinctions remain edition-level qualifications.
+
+Pending: CV0008 and CV0014; publication months unresolved.
+
+## M746 ? Final Two Qualified Core Metadata Approvals
+
+Approved for core bibliographic metadata:
+- CV0008: Amazing Spider-Man Annual #14, 1980.
+- CV0014: The New Humans #2, 1987.
+
+Qualifications:
+- CV0008: Cover month unconfirmed; on-sale date is not a cover date.
+- CV0014: Historical [August] 1987 is qualified, not confirmed.
+- Both issue_date fields intentionally remain blank.
+- Exact physical editions have not been authenticated.
+
+Pilot core metadata verification: 20/20.

@@ -188,3 +188,13 @@ ComicVision AI is complete when:
 **Document owner:** ComicVision AI Project
 **Last reviewed:** November 10, 2026
 **Next review:** Milestone 02 completion
+
+## Milestone 02 ? Verified Pilot Dataset
+
+- The 20-comic pilot catalog has completed core metadata verification.
+- All 20 records are marked verified.
+- CV0008 and CV0014 retain intentionally unresolved publication months.
+- Verification does not imply physical-edition authentication.
+- Final CSV validation passed.
+- Final regression suite: 29 tests passed.
+- Next phase: Milestone 03 under the established roadmap.
