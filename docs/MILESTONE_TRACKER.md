@@ -70,15 +70,15 @@ Milestone 01 is complete only when:
 
 ## 3. Milestone 02 — Physical Data Acquisition
 
-**Status:** In Progress
+**Status:** Complete ? 20-comic pilot scope
 
 ### Original Deliverables
 
-- [ ] 20-comic pilot photography and metadata validation.
+- [x] 20-comic pilot photography and metadata validation.
 - [ ] Complete 100-comic catalog.
 - [x] Image naming and storage standards documented.
-- [ ] OCR-assisted metadata extraction experiment.
-- [ ] Dataset validation report.
+- [x] OCR-assisted metadata extraction experiment.
+- [x] Dataset validation report.
 
 ### Completed and Verified Implementation
 
@@ -100,13 +100,13 @@ Milestone 01 is complete only when:
 
 ### Remaining Work
 - [x] Acquire 20 pilot comics with corresponding cover photographs and catalog records.
-- [ ] Independently verify historical metadata for all 20 pilot comics.
+- [x] Independently verify historical metadata for all 20 pilot comics.
 - [ ] Complete acquisition and verification of 100 unique comics.
-- [ ] Strengthen metadata format validation.
-- [ ] Implement image readability and quality checks.
-- [ ] Perform the OCR-assisted metadata extraction experiment.
-- [ ] Produce the dataset validation report.
-- [ ] Review all Milestone 02 acceptance criteria.
+- [x] Strengthen metadata format validation.
+- [x] Implement image readability and quality checks.
+- [x] Perform the OCR-assisted metadata extraction experiment.
+- [x] Produce the dataset validation report.
+- [x] Review all Milestone 02 acceptance criteria.
 
 ### Milestone 02 Acceptance Criteria
 
@@ -125,13 +125,25 @@ target of 50 comics.
 Milestone 03 may begin after Milestone 02 pilot acceptance
 criteria are satisfied. The 12-milestone roadmap is unchanged.
 
-**Acceptance Status:** Not Yet Satisfied
+**Acceptance Status:** Satisfied ? approved 20-comic pilot scope
 
 **Latest Verified Test Result:** 29 passed, 0 failed (November 15, 2026; issue-date schema migration).
 
-**Development Branch:** `milestone-02-data-acquisition`
+**Development Branch:** `main`
 
-**Latest Verified Commit:** `413a5e1`
+**Latest Verified Commit:** `098dcbb`
+
+
+### Final Pilot Acceptance ? November 16, 2026
+
+- Pilot records: 20/20 verified for core metadata.
+- Original cover images: 20/20 readable.
+- Automated validation: 9/9 PASS.
+- Regression tests: 29 PASS.
+- Validation report: reports/milestone_02_dataset_validation_report.md.
+- Publication-month and physical-edition qualifications remain documented.
+- The 100+ comic collection target remains outstanding.
+- Milestone 03 is authorized to begin.
 
 ## 4. Milestone 03 — Data Audit and EDA
 
