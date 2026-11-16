@@ -470,3 +470,25 @@ Next action:
 Apply the approved status changes to the five
 catalog records, preserving their existing metadata
 and uncertainty notes.
+
+## M729 ? Batch 2 Core Metadata Approval
+
+Decision: Approve core bibliographic metadata for seven records.
+Approval does not establish the exact physical edition.
+
+Approved records: CV0007, CV0009, CV0010, CV0011, CV0012, CV0015, CV0019
+Remaining pending: CV0008, CV0013, CV0014, CV0016, CV0017, CV0018, CV0020
+
+Evidence reviewed:
+- Consolidated historical issue references.
+- Batch cover visual inspection.
+- Issue number and publication year reconciliation.
+- Date, title, and price consistency checks.
+- Publisher reference documentation.
+
+Qualifications:
+- CV0019: Specific indicia publisher remains unresolved.
+- CV0008 and CV0014: Publication months remain unresolved.
+- Variant and edition identity remain unverified where applicable.
+
+CSV verification statuses have not yet been changed.

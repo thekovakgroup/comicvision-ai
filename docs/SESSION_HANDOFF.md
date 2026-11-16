@@ -293,3 +293,21 @@ At the beginning of the next conversation:
 5. Resume from the documented next action.
 
 Do not assume unverified steps were completed.
+
+## M735 ? Session Continuity Checkpoint
+
+- Project: ComicVision AI.
+- Current milestone: M02 ? pilot metadata verification.
+- Workflow: ONE executable action per turn; verify output before advancing.
+- Efficiency audit: every 10 numbered steps; next at M740.
+- Catalog: 13 verified, 7 pending, 20 total.
+- Pending IDs: CV0008, CV0013, CV0014, CV0016, CV0017, CV0018, CV0020.
+- Outstanding: reconcile partial physical-cover evidence and unresolved dates.
+- CV0019 exact indicia attribution remains qualified.
+- Latest regression result: 29 passed in 0.73s.
+- Research: reports/milestone_02_remaining_metadata_research.md.
+- Historical evidence: reports/milestone_02_batch_historical_evidence.md.
+- Verification decisions: reports/milestone_02_metadata_verification_log.md.
+- Cover evidence: reports/figures/batch_02_cover_evidence.jpg.
+- Next: stage reviewed project files, commit, push, then finish M02.
+- Do not repeat completed consistency checks without a specific reason.

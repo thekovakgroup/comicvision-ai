@@ -286,3 +286,17 @@ expanding the verified comic dataset.
 **Project:** ComicVision AI
 **Current milestone:** 02 — Physical Data Acquisition
 **Milestone completion:** Not yet approved
+
+## M735 ? Milestone 02 Metadata Verification Checkpoint
+
+- Milestone 02 status: IN PROGRESS.
+- Pilot catalog: 20 records.
+- Core bibliographic metadata verified: 13/20 (65%).
+- Remaining pending: 7/20 (35%).
+- Pending IDs: CV0008, CV0013, CV0014, CV0016, CV0017, CV0018, CV0020.
+- CV0008 and CV0014: publication months remain unresolved.
+- CV0019: exact indicia attribution remains qualified.
+- Exact physical editions are not established by core metadata approval.
+- Independent CSV validation: PASS (M731).
+- Regression tests: 29 passed (M732).
+- Next: commit checkpoint, then reconcile seven pending records.
