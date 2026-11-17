@@ -1,10 +1,10 @@
 # ComicVision AI - Session Handoff
 
 **Version:** 1.5
-**Last Updated:** November 16, 2026
-**Current Milestone:** 03 - Data Audit and EDA
-**Milestone Status:** Technical acceptance satisfied; administrative closeout in progress
-**Current Step:** Documentation closeout and Git verification
+**Last Updated:** November 17, 2026
+**Current Milestone:** 04 — Preprocessing and Baselines
+**Milestone Status:** Milestone 03 complete; Milestone 04 ready to begin
+**Current Step:** Milestone 04 — Preprocessing and Baselines
 
 ## 1. Project Identity
 
@@ -331,7 +331,7 @@ Do not assume unverified steps were completed.
 
 **Checkpoint Date:** November 16, 2026
 **Current Milestone:** 03 - Data Audit and EDA
-**Status:** Technical acceptance satisfied; administrative closeout in progress
+**Status:** Completed
 **Last Completed Step:** M884
 **Development Branch:** `milestone-03-data-audit-eda`
 
@@ -427,13 +427,12 @@ Historical checkpoints remain preserved.
 
 ## Current Milestone 03 Closeout
 
-**Status:** Technical acceptance passed; fast-forward merge completed locally; final status update and push pending.
+**Status:** Technical acceptance passed; fast-forward merge completed locally; final status update and closeout pushed.
 **Current Branch:** `main`
 **Integration Commit:** `d29ca77`
-**Last Verified Git State:** `main` was two commits ahead of `origin/main`, with a clean working tree before this status edit.
+**Last Verified Git State:** `main` was synchronized with `origin/main` and clean before this final status edit.
 **Last Completed Step:** M900
-**Next Executable Action:** M901 - Commit and push the final status update, then verify clean synchronization before starting Milestone 04.
+**Next Executable Action:** Milestone 04.
 
 - The implementation and documentation closeout are merged into local `main`.
-- The final status update will make the handoff match that merge.
 - Milestone 03 validation evidence and carried risks are recorded above.
