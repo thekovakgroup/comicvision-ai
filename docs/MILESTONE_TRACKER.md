@@ -11,7 +11,7 @@
 |---|---|---|---|
 | 01 | Project Foundation | Completed | 1 week |
 | 02 | Physical Data Acquisition | Completed | 2 weeks |
-| 03 | Data Audit and EDA | In Progress | 1 week |
+| 03 | Data Audit and EDA | Closeout in Progress | 1 week |
 | 04 | Preprocessing and Baselines | Not Started | 1 week |
 | 05 | Unsupervised Clustering | Not Started | 1 week |
 | 06 | Recommendation Engine | Not Started | 1 week |
@@ -126,7 +126,7 @@ target of 50 comics.
 Milestone 03 may begin after Milestone 02 pilot acceptance
 criteria are satisfied. The 12-milestone roadmap is unchanged.
 
-**Acceptance Status:** Satisfied ? approved 20-comic pilot scope
+**Acceptance Status:** Satisfied - approved 20-comic pilot scope
 
 **Latest Verified Test Result:** 29 passed, 0 failed (November 15, 2026; issue-date schema migration).
 
@@ -148,14 +148,14 @@ criteria are satisfied. The 12-milestone roadmap is unchanged.
 
 ## 4. Milestone 03 — Data Audit and EDA
 
-**Status:** In Progress — final documentation and Git checkpoint
+**Status:** Technical acceptance satisfied; administrative closeout in progress
 
 ### Completed and Verified
 
 - [x] Create reproducible EDA notebook.
 - [x] Audit missing values and duplicate records.
 - [x] Analyze publisher and publication-decade distributions.
-- [x] Document unavailable genre labels.
+- [x] Document unavailable genre labels and descriptions.
 - [x] Assess all 20 cover images.
 - [x] Export and validate image-quality audit CSV.
 - [x] Create dataset suitability report.
@@ -163,11 +163,18 @@ criteria are satisfied. The 12-milestone roadmap is unchanged.
 - [x] Verify notebook execution from a fresh kernel.
 - [x] Pass 30 automated regression tests.
 
-### Remaining Acceptance Tasks
+### Acceptance Evidence
 
-- [ ] Review final project documentation.
-- [ ] Verify Git changes and commit Milestone 03.
-- [ ] Push changes and confirm clean Git status.
+- Pilot catalog: 20 comics; 12 original metadata columns; 0 duplicate records.
+- Readable cover images: 20/20.
+- Notebook fresh-kernel execution: PASS.
+- CSV round-trip validation: PASS.
+- Dependency consistency: PASS.
+- Regression tests: 30 passed, 0 failed.
+- Development branch: `milestone-03-data-audit-eda`.
+- Verified implementation commit: `dca1550`.
+- Before documentation edits, the implementation branch was clean and synchronized with `origin/milestone-03-data-audit-eda`; the documentation edits are currently uncommitted.
+- Fast-forward merge into `main`: available; not yet performed.
 
 ### Supporting Artifacts
 
@@ -175,16 +182,26 @@ criteria are satisfied. The 12-milestone roadmap is unchanged.
 - `reports/milestone_03_image_quality_audit.csv`
 - `reports/milestone_03_dataset_suitability_report.md`
 - `tests/test_image_quality_audit.py`
+- Updated `pyproject.toml`
 
-### Acceptance Criteria
+### Risks Carried Forward
 
-Reproducible EDA and documented recommendations
-for downstream ML tasks.
+- 80 comics remain to reach the 100-comic collection target.
+- The 20-comic pilot is too small for reliable supervised performance claims.
+- Publisher and era classes are imbalanced.
+- CV0002, CV0006, and CV0013 need visual review.
+- Genre and description fields need enrichment before related NLP and supervised experiments.
 
-**Acceptance Status:** Pending final documentation
-and Git verification.
+### Remaining Closeout Tasks
 
-## 5. Milestone 04 — Preprocessing and Baselines
+- [ ] Commit and push the documentation closeout.
+- [ ] Fast-forward `main` to include the verified Milestone 03 work.
+- [ ] Confirm clean, synchronized Git state after the merge.
+- [ ] Mark Milestone 03 Completed and authorize Milestone 04 after closeout.
+
+**Acceptance Status:** Technical criteria satisfied; final administrative closeout pending.
+
+## 5. Milestone 04 - Preprocessing and Baselines
 
 **Status:** Not Started
 
@@ -196,7 +213,7 @@ Deliverables:
 
 Acceptance criteria: Reproducible preprocessing without data leakage.
 
-## 6. Milestone 05 — Unsupervised Clustering
+## 6. Milestone 05 - Unsupervised Clustering
 
 **Status:** Not Started
 
@@ -207,7 +224,7 @@ Deliverables:
 
 Acceptance criteria: Documented clustering results and limitations.
 
-## 7. Milestone 06 — Recommendation Engine
+## 7. Milestone 06 - Recommendation Engine
 
 **Status:** Not Started
 
@@ -219,7 +236,7 @@ Deliverables:
 
 Acceptance criteria: Reproducible recommendations and meaningful evaluation.
 
-## 8. Milestone 07 — Supervised Classification
+## 8. Milestone 07 - Supervised Classification
 
 **Status:** Not Started
 
@@ -231,7 +248,7 @@ Deliverables:
 
 Acceptance criteria: Reproducible supervised evaluation with justified metrics.
 
-## 9. Milestone 08 — Deep Learning and Transfer Learning
+## 9. Milestone 08 - Deep Learning and Transfer Learning
 
 **Status:** Not Started
 
@@ -243,7 +260,7 @@ Deliverables:
 
 Acceptance criteria: Reproducible PyTorch experiments and defensible performance comparison.
 
-## 10. Milestone 09 — Multimodal Retrieval
+## 10. Milestone 09 - Multimodal Retrieval
 
 **Status:** Not Started
 
@@ -255,7 +272,7 @@ Deliverables:
 
 Acceptance criteria: Working multimodal retrieval with documented comparative results.
 
-## 11. Milestone 10 — Model API and Application
+## 11. Milestone 10 - Model API and Application
 
 **Status:** Not Started
 
@@ -268,7 +285,7 @@ Deliverables:
 
 Acceptance criteria: Functional local end-to-end application.
 
-## 12. Milestone 11 — MLOps, Security, and Deployment
+## 12. Milestone 11 - MLOps, Security, and Deployment
 
 **Status:** Not Started
 
@@ -282,7 +299,7 @@ Deliverables:
 
 Acceptance criteria: Reproducible container build, passing checks, and functioning deployed application.
 
-## 13. Milestone 12 — Final Evaluation and Portfolio
+## 13. Milestone 12 - Final Evaluation and Portfolio
 
 **Status:** Not Started
 
@@ -312,12 +329,9 @@ Before starting a new chat, update:
 
 Record the last verified action, current branch, Git status, unresolved issues, and next executable action.
 
-
 ## 15. Current Next Action
 
-Complete the Milestone 02 documentation checkpoint, then
-continue strengthening catalog metadata validation and
-expanding the verified comic dataset.
+Complete the Milestone 03 documentation closeout, commit and push it, fast-forward `main`, and verify the final clean synchronized state. Do not begin Milestone 04 until these closeout checks pass.
 
 ---
 
@@ -339,15 +353,23 @@ expanding the verified comic dataset.
 - Regression tests: 29 passed (M732).
 - Next: commit checkpoint, then reconcile seven pending records.
 
-##  Milestone 02 Completion
+## Historical Checkpoint — Milestone 02 Completion
 
-- Milestone 02: COMPLETE - pilot core metadata verification.
-- Pilot records: 20.
-- Verified records: 20/20 (100%).
-- Missing required metadata fields: 0.
-- Final independent CSV validation: PASS (M747).
-- Final regression tests: 29 passed in 0.51s (M748).
-- CV0008: publication month unresolved; year 1980 retained.
-- CV0014: qualified historical month; year 1987 retained.
-- Physical-edition authentication remains outside approval scope.
-- Next: final GitHub checkpoint and Milestone 03.
+- Milestone 02: Complete for the approved 20-comic pilot scope.
+- Pilot records: 20; core metadata verified: 20/20.
+- Final CSV validation: PASS (M747).
+- Regression tests: 29 passed (M748).
+- CV0008 and CV0014 retain documented publication-month qualifications.
+- Physical-edition authentication remains outside the approval scope.
+- The 100+ comic collection target remains outstanding.
+
+## Current Checkpoint — Milestone 03 Administrative Closeout
+
+- Technical acceptance: Satisfied.
+- Implementation commit: `dca1550` on `milestone-03-data-audit-eda`.
+- Branch state before documentation edits: clean and synchronized with its origin.
+- Fast-forward merge into `main`: available; not yet performed.
+- Documentation closeout and final Git verification: pending.
+- Carried risks: 80 comics remain to acquire; the pilot is too small for reliable supervised performance claims; publisher and era classes are imbalanced; CV0002, CV0006, and CV0013 need visual review; genre and description metadata need enrichment.
+- Next: review all three documentation diffs, commit and push the closeout, fast-forward `main`, and verify clean synchronization.
+- Do not begin Milestone 04 until closeout is verified.
