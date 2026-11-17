@@ -305,11 +305,9 @@ Requires metadata enrichment:
 
 ### Remaining Acceptance Tasks
 
-- [ ] Complete and review the closeout updates in all three continuity documents.
-- [ ] Review the Git diff and check for whitespace errors.
-- [ ] Commit and push the documentation closeout.
-- [ ] Fast-forward `main` and confirm a clean, synchronized Git state.
-- [ ] Close Milestone 03 and authorize Milestone 04 after the Git checks pass.
-
-**Milestone 03 Acceptance:** Pending final documentation
-and Git verification.
+- [x] Complete and review the closeout documentation.
+- [x] Review the diff and check whitespace.
+- [x] Commit and push the documentation closeout on the feature branch.
+- [x] Fast-forward `main` locally.
+- [ ] Commit and push the final post-merge status update.
+- [ ] Confirm clean synchronization, then mark Milestone 03 complete and authorize Milestone 04.

@@ -424,23 +424,16 @@ Historical checkpoints remain preserved.
 - `docs/PROJECT_MASTER.md`: Milestone 03 progress added.
 - `docs/MILESTONE_TRACKER.md`: Milestone 03 in progress.
 - `docs/SESSION_HANDOFF.md`: Current-state checkpoint added.
+
 ## Current Milestone 03 Closeout
 
-**Status:** Technical acceptance satisfied; administrative closeout in progress
-**Development Branch:** `milestone-03-data-audit-eda`
-**Implementation Commit:** `dca1550`
+**Status:** Technical acceptance passed; fast-forward merge completed locally; final status update and push pending.
+**Current Branch:** `main`
+**Integration Commit:** `d29ca77`
+**Last Verified Git State:** `main` was two commits ahead of `origin/main`, with a clean working tree before this status edit.
+**Last Completed Step:** M900
+**Next Executable Action:** M901 - Commit and push the final status update, then verify clean synchronization before starting Milestone 04.
 
-- The implementation branch was clean and synchronized before the documentation edits.
-- The three continuity documents have local, uncommitted closeout edits.
-- A fast-forward merge of this branch into `main` is available but has not been performed.
-- Milestone 03 validation reported: fresh-kernel notebook PASS, CSV round-trip PASS, dependency consistency PASS, and 30 tests passed.
-- Carried risks: 80 comics remain to acquire; the pilot is small for reliable supervised evaluation; publisher and era classes are imbalanced; CV0002, CV0006, and CV0013 need visual review; genre and description data need enrichment.
-
-### Closeout Sequence
-
-1. Review the complete documentation diff and check whitespace.
-2. Commit and push the documentation updates.
-3. Fast-forward `main` and verify a clean, synchronized state.
-4. Mark Milestone 03 complete and begin Milestone 04 only after those checks pass.
-
-**Next Executable Action:** Review the corrected documentation diff and Git status.
+- The implementation and documentation closeout are merged into local `main`.
+- The final status update will make the handoff match that merge.
+- Milestone 03 validation evidence and carried risks are recorded above.

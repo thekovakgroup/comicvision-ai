@@ -194,8 +194,8 @@ criteria are satisfied. The 12-milestone roadmap is unchanged.
 
 ### Remaining Closeout Tasks
 
-- [ ] Commit and push the documentation closeout.
-- [ ] Fast-forward `main` to include the verified Milestone 03 work.
+- [x] Commit and push the documentation closeout.
+- [x] Fast-forward `main` to include the verified Milestone 03 work.
 - [ ] Confirm clean, synchronized Git state after the merge.
 - [ ] Mark Milestone 03 Completed and authorize Milestone 04 after closeout.
 
