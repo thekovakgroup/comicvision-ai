@@ -203,15 +203,28 @@ criteria are satisfied. The 12-milestone roadmap is unchanged.
 
 ## 5. Milestone 04 - Preprocessing and Baselines
 
-**Status:** Not Started
+**Status:** Closeout in Progress.
 
-Deliverables:
+### Deliverables and acceptance
+
 - Image and text preprocessing pipelines.
 - Dataset splitting strategy.
 - TF-IDF and basic visual features.
 - Baseline similarity experiments.
 
-Acceptance criteria: Reproducible preprocessing without data leakage.
+**Acceptance criterion:** Reproducible preprocessing without data leakage.
+
+### Verified evidence
+
+- Reproducible 16-training / 4-holdout split with no overlapping comic IDs.
+- Title TF-IDF fitted on training titles only. Removing common words
+  reduced positive-match coverage from 11/16 to 9/16 training comics.
+- Whole-cover and quadrant RGB baselines produced different third-ranked
+  matches for CV0003. Recommendation relevance remains to be evaluated.
+- The notebook ran from a fresh kernel and reproduced the quadrant ranking.
+- Repository regression tests: 30 passed.
+- Implementation commit `0467a46` published on
+  `milestone-04-preprocessing-baselines`.
 
 ## 6. Milestone 05 - Unsupervised Clustering
 

@@ -311,3 +311,17 @@ Requires metadata enrichment:
 - [x] Fast-forward `main` locally.
 - [x] Commit and push the final post-merge status update.
 - [x] Confirm clean synchronization, then mark Milestone 03 complete and authorize Milestone 04.
+
+### Milestone 04 — Preprocessing and Baselines
+
+- Use a reproducible 16/4 split by comic ID with random seed 42. Fit
+  learned preprocessing on the training split only and reserve the
+  four holdout comics for later evaluation.
+- Use title-only TF-IDF for the pilot text baseline because genre and
+  description fields are empty. Compare default tokenization with
+  English stop-word removal on training titles.
+- Use whole-cover and quadrant mean RGB as visual baselines. Quadrant
+  RGB preserves coarse color location and provides 12 features per
+  cover for exploratory similarity and clustering.
+- Treat the similarity rankings as exploratory. Human relevance
+  judgments are needed to assess recommendation quality.

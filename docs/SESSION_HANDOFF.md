@@ -436,3 +436,17 @@ Historical checkpoints remain preserved.
 
 - The implementation and documentation closeout are merged into local `main`.
 - Milestone 03 validation evidence and carried risks are recorded above.
+
+## Current handoff — Milestone 04 closeout
+
+- Branch: `milestone-04-preprocessing-baselines`
+- Verified implementation: `0467a46`, pushed to `origin`.
+- Git checkpoint: branch synchronized and working tree clean before
+  the local closeout documentation edits.
+- Verification: the notebook ran from a fresh kernel and reproduced
+  the quadrant RGB ranking. All 30 repository tests passed.
+- Next action: review the three continuity document changes before
+  committing and pushing the closeout.
+- Milestone 05 starting point: explore clustering with the 12
+  quadrant RGB features from the 16 training covers. Reserve the
+  four holdout comics for later evaluation.
