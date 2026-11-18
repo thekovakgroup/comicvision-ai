@@ -2,7 +2,7 @@
 
 **Version:** 1.2
 **Last Updated:** November 17, 2026
-**Current Milestone:** 04 - Preprocessing and Baselines
+**Current Milestone:** 05 — Unsupervised Clustering
 **Overall Status:** In Progress
 **Project Type:** Computer Vision, Machine Learning, Deep Learning, NLP, and Multimodal AI
 
@@ -313,6 +313,7 @@ Requires metadata enrichment:
 - [x] Confirm clean synchronization, then mark Milestone 03 complete and authorize Milestone 04.
 
 ### Milestone 04 — Preprocessing and Baselines
+**Status:** Completed. Verified and merged into `main` at `0743508`.
 
 - Use a reproducible 16/4 split by comic ID with random seed 42. Fit
   learned preprocessing on the training split only and reserve the

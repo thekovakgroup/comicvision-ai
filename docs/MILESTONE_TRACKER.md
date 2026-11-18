@@ -12,7 +12,7 @@
 | 01 | Project Foundation | Completed | 1 week |
 | 02 | Physical Data Acquisition | Completed | 2 weeks |
 | 03 | Data Audit and EDA | Completed | 1 week |
-| 04 | Preprocessing and Baselines | Not Started | 1 week |
+| 04 | Preprocessing and Baselines | Completed | 1 week |
 | 05 | Unsupervised Clustering | Not Started | 1 week |
 | 06 | Recommendation Engine | Not Started | 1 week |
 | 07 | Supervised Classification | Not Started | 2 weeks |
@@ -203,7 +203,7 @@ criteria are satisfied. The 12-milestone roadmap is unchanged.
 
 ## 5. Milestone 04 - Preprocessing and Baselines
 
-**Status:** Closeout in Progress.
+**Status:** Completed.
 
 ### Deliverables and acceptance
 
@@ -216,6 +216,7 @@ criteria are satisfied. The 12-milestone roadmap is unchanged.
 
 ### Verified evidence
 
+- Accepted and merged into `main` at `0743508`. Local `main` was verified clean and synchronized with `origin/main`.
 - Reproducible 16-training / 4-holdout split with no overlapping comic IDs.
 - Title TF-IDF fitted on training titles only. Removing common words
   reduced positive-match coverage from 11/16 to 9/16 training comics.
