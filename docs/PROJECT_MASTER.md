@@ -2,7 +2,7 @@
 
 **Version:** 1.2
 **Last Updated:** November 17, 2026
-**Current Milestone:** 05 — Unsupervised Clustering
+**Current Milestone:** 06 — Recommendation Engine
 **Overall Status:** In Progress
 **Project Type:** Computer Vision, Machine Learning, Deep Learning, NLP, and Multimodal AI
 
@@ -326,3 +326,17 @@ Requires metadata enrichment:
   cover for exploratory similarity and clustering.
 - Treat the similarity rankings as exploratory. Human relevance
   judgments are needed to assess recommendation quality.
+
+### Milestone 05 — Unsupervised Clustering
+
+**Status:** Completed and verified on `main` at `4c5ebfc`.
+
+- Fit K-means on 16 training covers using mean RGB values from four
+  quadrants. The four holdout covers remain reserved for later evaluation.
+- Retained three clusters for interpretation because each contained
+  several covers. The groups had 5, 6, and 5 covers, with a training
+  silhouette score of 0.260.
+- Used PCA to visualize the clusters. Two components captured 62.4%
+  of the variation in the 12 RGB features.
+- Treat the clusters as exploratory color patterns. Milestone 06 will
+  evaluate recommendation relevance with human review.

@@ -13,7 +13,7 @@
 | 02 | Physical Data Acquisition | Completed | 2 weeks |
 | 03 | Data Audit and EDA | Completed | 1 week |
 | 04 | Preprocessing and Baselines | Completed | 1 week |
-| 05 | Unsupervised Clustering | Not Started | 1 week |
+| 05 | Unsupervised Clustering | Completed | 1 week |
 | 06 | Recommendation Engine | Not Started | 1 week |
 | 07 | Supervised Classification | Not Started | 2 weeks |
 | 08 | Deep Learning and Transfer Learning | Not Started | 2 weeks |
@@ -229,7 +229,7 @@ criteria are satisfied. The 12-milestone roadmap is unchanged.
 
 ## 6. Milestone 05 - Unsupervised Clustering
 
-**Status:** Not Started
+**Status:** Completed
 
 Deliverables:
 - K-Means clustering experiments.
@@ -237,6 +237,15 @@ Deliverables:
 - Cluster interpretation report.
 
 Acceptance criteria: Documented clustering results and limitations.
+
+### Verified evidence
+
+- The clustering notebook and interpretation report are on `main` at `4c5ebfc`.
+- K-means grouped 16 training covers using 12 quadrant RGB features per cover.
+  The three-cluster result had group sizes of 5, 6, and 5 and a silhouette
+  score of 0.260. Two PCA components captured 62.4% of feature variance.
+- A fresh kernel run reproduced the results. All 30 repository tests passed.
+- Local `main` was verified clean and synchronized with `origin/main`.
 
 ## 7. Milestone 06 - Recommendation Engine
 

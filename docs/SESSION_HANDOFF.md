@@ -437,10 +437,19 @@ Historical checkpoints remain preserved.
 - The implementation and documentation closeout are merged into local `main`.
 - Milestone 03 validation evidence and carried risks are recorded above.
 
-## Current handoff — Milestone 05: Unsupervised Clustering
+## Current handoff — Milestone 06: Recommendation Engine
 
-- Milestone 04 is complete. Its implementation, verification notes, and notebook summary were merged into `main` at `0743508`.
-- After the merge, local `main` was verified clean and synchronized with `origin/main`.
-- Verification: the Milestone 04 notebook reproduced its quadrant RGB ranking from a fresh kernel. All 30 repository tests passed.
-- Next Git action: commit and publish the final continuity updates on `main`.
-- First Milestone 05 experiment: explore K-means clustering using the 12 quadrant RGB features from the 16 training covers. Reserve the four holdout comics for later evaluation.
+- Milestone 05 is complete. The clustering notebook and interpretation
+  report are on `main` at `4c5ebfc`. After the merge, local `main` was
+  verified clean and synchronized with `origin/main`.
+- A fresh kernel run reproduced cluster sizes of 5, 6, and 5, a silhouette
+  score of 0.260, and 62.4% variance captured by two PCA components.
+  All 30 repository tests passed.
+- The four holdout covers remain reserved for later evaluation.
+- Local Git note: A standard fetch failed because Git could not write
+  `.git/FETCH_HEAD`. Refreshing `origin/main` with `--no-write-fetch-head`
+  and an explicit refspec succeeded.
+- Next Git action: commit and publish the three continuity document
+  updates on `main` before starting a new chat.
+- First Milestone 06 experiment: define a small human relevance rubric
+  and use training comics to compare title and cover similarity rankings.
